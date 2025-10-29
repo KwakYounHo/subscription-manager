@@ -1,0 +1,7 @@
+FROM postgres:17
+
+# These files are executed when the container has no pre-existing database
+COPY init/*.sql /docker-entrypoint-initdb.d/
+
+# Expose default port
+EXPOSE 5432
